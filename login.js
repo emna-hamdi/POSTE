@@ -1,11 +1,11 @@
 const form = document.querySelector("form");
 const users = JSON.parse(localStorage.getItem("users")) || [];
 
+
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     const email = document.querySelector("#inputEmailAddress");
     const password = document.querySelector("#inputPassword");
-
     const validUser = users.find((user) => user.email === email.value && user.password=== password.value);
  
   console.log(validUser);
@@ -16,13 +16,13 @@ form.addEventListener("submit", (e) => {
 
     switch (validUser.poste) {
         case 'Admin':
-            window.location.href = "http://127.0.0.1:5500/forms-layouts.html";
+            window.location.href = "forms-layouts.html";
           break;
         case 'recipient':
-            window.location.href = "http://127.0.0.1:5500/register.html";
+            window.location.href = "register.html";
           break;
-        case 'financial resource':
-        window.location.href = "http://127.0.0.1:5500/register.html";
+        case 'financial-resource':
+        window.location.href = "guichitier.html";
           break;
         default:
           break;

@@ -3,9 +3,13 @@ const abs =document.querySelector(".abs")
 const valeurs =document.querySelectorAll(".inputs")
 const resultat =document.querySelectorAll(".somme")
 const total =document.querySelector("#total")
+
+const typem =document.querySelector("#type-mvm")
 const date =document.getElementById('date')
+let tab=JSON.parse(localStorage.getItem("mouvement-guichitier")) || [];
+const user= JSON.parse(localStorage.getItem("connectedUser")) 
 let totalv=0;
-let tab=[]
+
 let mguichet=[]
 var d= new Date();
 date.innerText=d.getUTCDate()+"-"+Number(d.getUTCMonth()+1)+'-'+d.getFullYear()+'/'+d.getHours()+':'+d.getMinutes()
@@ -52,11 +56,12 @@ abs.addEventListener('click', (e) => {
 
 
 
-
-
+        formulaire['type']=typem.textContent
+        formulaire['iduser']=user.id
         formulaire['status']="false"   
          formulaire['id']=Math.floor(Math.random()*1000)
-        localStorage.setItem("mouvement-guichitier", JSON.stringify(formulaire));
+         tab.push(formulaire)
+        localStorage.setItem("mouvement-guichitier", JSON.stringify(tab));
         location.href="#"
 
 })
