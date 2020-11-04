@@ -58,7 +58,7 @@ butt2.forEach(button=>button.addEventListener("click",(e)=>{
   if(e.target.classList.contains("edite")){
 const user=EditUser(e);
 localStorage.setItem("user", JSON.stringify(user));
-location.href="./update.html"
+location.href="update.html"
 
   }
 }))

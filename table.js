@@ -62,7 +62,7 @@ abs.addEventListener('click', (e) => {
          formulaire['id']=Math.floor(Math.random()*1000)
          tab.push(formulaire)
         localStorage.setItem("mouvement-guichitier", JSON.stringify(tab));
-        location.href="#"
+        location.href="guichitier.html"
 
 })
 

@@ -1,4 +1,4 @@
-let tab=JSON.parse(localStorage.getItem("mouvement-guichitier")) || [];
+let tab1=JSON.parse(localStorage.getItem("mouvement-guichitier")) || [];
 const user= JSON.parse(localStorage.getItem("connectedUser")) 
 const name =document.querySelector("#userconnecte")
 let list = document.querySelector("#dates");
@@ -6,6 +6,7 @@ console.log(user.email);
 console.log(name);
 name.innerText=user.email.toString()
 console.log(user.id)
+tab=tab1.reverse()
 for (let i=0; i<tab.length;i++){
     if(user.id==tab[i].iduser){
     let pr=`
